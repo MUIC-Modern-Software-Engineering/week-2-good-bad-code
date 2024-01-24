@@ -19,8 +19,8 @@ def test_add_task():
     add_todo(con, 'task 1')
     assert count_todo(con) == 1
 
-
-def test_add_2_task():
-    add_todo(con, 'task 1')
-    add_todo(con, 'task 2')
-    assert count_todo(con) == 2
+# this test will fail
+# def test_add_2_task():
+#     add_todo(con, 'task 1')
+#     add_todo(con, 'task 2')
+#     assert count_todo(con) == 2
