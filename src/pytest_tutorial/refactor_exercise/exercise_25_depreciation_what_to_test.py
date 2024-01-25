@@ -37,4 +37,10 @@ def remaining_value(value: Decimal, purchase_date: date, current_date: date, tax
     Returns:
         Decimal: Remaining value
     """
-    pass
+    if tax_mode == TaxMode.STRAIGHT_LINE:
+        return value * Decimal(1 - (current_date.year - purchase_date.year) / 3)
+    elif tax_mode == TaxMode.FRONT_LOAD:
+        if current_date.year == purchase_date.year:
+            return value * Decimal(0.6)
+        else:
+            return value * Decimal(0.6) * Decimal(1 - (current_date.year - purchase_date.year - 1) / 3)

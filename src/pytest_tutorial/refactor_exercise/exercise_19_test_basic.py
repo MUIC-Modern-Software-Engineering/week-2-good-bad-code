@@ -3,8 +3,8 @@ from typing import TypeVar
 T = TypeVar('T')
 
 
-def add_number(a: int, b: int) -> int:
-    return a + b
+# def add_number(a: int, b: int) -> int:
+#     return a + b
 
 
 def reverse_list(lst: list[T]) -> list[T]:
